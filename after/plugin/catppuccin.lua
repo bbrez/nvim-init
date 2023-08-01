@@ -5,4 +5,10 @@ require('catppuccin').setup({
     }
 })
 
+require('lualine').setup({
+    options = {
+        theme = 'catppuccin'
+    }
+})
+
 vim.cmd.colorscheme 'catppuccin'
