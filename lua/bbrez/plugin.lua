@@ -85,6 +85,29 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
     }
 
+    use {
+        'akinsho/nvim-toggleterm.lua',
+        config = function()
+            require('toggleterm').setup{
+                autochdir = true,
+                open_mapping = [[<leader>tt]],
+                insert_mappings = false,
+                direction = 'float',
+                float_opts =  {
+                    border =  'curved',
+                },
+                shade_terminals = true,
+                shading_factor = -30,
+                winbar = {
+                    enabled = true,
+                    name_formatter = function(term)
+                        return term.name
+                    end
+                }
+            }
+        end
+    }
+
     if packer_bootstrap then
         require('packer').sync()
     end
