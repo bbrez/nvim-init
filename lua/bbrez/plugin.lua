@@ -137,6 +137,13 @@ return require('packer').startup(function(use)
         ft = { 'markdown' },
     }
 
+    use {
+        'kylechui/nvim-surround',
+        config = function()
+            require('nvim-surround').setup{}
+        end
+    }
+
     if packer_bootstrap then
         require('packer').sync()
     end
