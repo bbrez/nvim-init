@@ -25,7 +25,7 @@ vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', {
     desc = 'Find Files'
 })
 
-vim.keymap.set('n', '<leader>fc', ':bd<CR>', {
+vim.keymap.set('n', '<leader>fc', ':bdelete<CR>', {
     noremap = true,
     silent = true,
     desc = 'Close File'

@@ -69,8 +69,12 @@ return require('packer').startup(function(use)
         end
     }
 
-    use 'rstacruz/vim-closer'
-    use 'tpope/vim-endwise'
+    use {
+        'windwp/nvim-autopairs',
+        config = function()
+            require('nvim-autopairs').setup{}
+        end
+    }
 
     use 'lukas-reineke/indent-blankline.nvim'
 
@@ -143,6 +147,8 @@ return require('packer').startup(function(use)
             require('nvim-surround').setup{}
         end
     }
+
+    use 'famiu/bufdelete.nvim'
 
     if packer_bootstrap then
         require('packer').sync()
