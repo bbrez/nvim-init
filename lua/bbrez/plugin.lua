@@ -19,6 +19,8 @@ return require('packer').startup(function(use)
 
     use { 'catppuccin/nvim', as = 'catppuccin' }
 
+    use { 'rebelot/kanagawa.nvim' }
+
     use 'nvim-tree/nvim-tree.lua'
 
     use {
@@ -149,6 +151,13 @@ return require('packer').startup(function(use)
     }
 
     use 'famiu/bufdelete.nvim'
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 
     if packer_bootstrap then
         require('packer').sync()
