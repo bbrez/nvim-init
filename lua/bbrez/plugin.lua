@@ -159,6 +159,25 @@ return require('packer').startup({ function(use)
         end
     }
 
+    use {
+        'folke/todo-comments.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require('todo-comments').setup{}
+        end
+    }
+
+    use {
+        'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+        as = 'lsp_lines',
+        config = function()
+            require('lsp_lines').setup{}
+            vim.diagnostic.config({
+                virtual_text = false,
+            })
+        end,
+    }
+
     if packer_bootstrap then
         require('packer').sync()
     end

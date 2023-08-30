@@ -31,6 +31,12 @@ vim.keymap.set('n', '<leader>fc', ':bdelete<CR>', {
     desc = 'Close File'
 })
 
+vim.keymap.set('n', '<leader>fC', ':bdelete!<CR>', {
+    noremap = true,
+    silent = true,
+    desc = 'Close File'
+})
+
 vim.keymap.set('n', '<leader>cf', ':LspZeroFormat<CR>', {
     noremap = true,
     silent = true,
@@ -53,4 +59,10 @@ vim.keymap.set('n', '<leader>cd', ':TroubleToggle<CR>', {
     noremap = true,
     silent = true,
     desc = 'Code Diagnostics'
+})
+
+vim.keymap.set('n', '<leader>td', ':TodoTelescope<CR>', {
+    noremap = true,
+    silent = true,
+    desc = 'Todo List'
 })
