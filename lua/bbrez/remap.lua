@@ -13,6 +13,9 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 
+vim.keymap.set('n', 'q:', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('n', 'Q', '<Nop>', { noremap = true, silent = true })
+
 vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<CR>', {
     noremap = true,
     silent = true,
