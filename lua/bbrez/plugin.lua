@@ -125,6 +125,7 @@ return require('packer').startup({ function(use)
                 c = { name = 'Code' },
                 f = { name = 'File' },
                 t = { name = 'Terminal' },
+                w = { name = 'Window' },
             }, { prefix = '<leader>' })
         end
     }

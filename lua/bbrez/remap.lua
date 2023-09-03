@@ -16,6 +16,18 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 vim.keymap.set('n', 'q:', '<Nop>', { noremap = true, silent = true })
 vim.keymap.set('n', 'Q', '<Nop>', { noremap = true, silent = true })
 
+vim.keymap.set('n', '<leader>wv', ':vs<CR>', {
+    noremap = true,
+    silent = true,
+    desc = 'Vertical Split'
+})
+
+vim.keymap.set('n', '<leader>wh', ':sp<CR>', {
+    noremap = true,
+    silent = true,
+    desc = 'Horizontal Split'
+})
+
 vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<CR>', {
     noremap = true,
     silent = true,
