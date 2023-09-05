@@ -178,6 +178,13 @@ return require('packer').startup({ function(use)
             })
         end,
     }
+    
+    use {
+        'nvim-orgmode/orgmode',
+        config = function()
+            require('orgmode').setup{}
+        end,
+    }
 
     if packer_bootstrap then
         require('packer').sync()

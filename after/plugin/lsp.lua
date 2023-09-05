@@ -18,6 +18,8 @@ require('mason-lspconfig').setup({
 
 require('nvim-treesitter.configs').setup({
     highlight = {
-        enable = true
+        enable = true,
+        additional_vim_regex_highlighting = {'org'}
     },
+    ensure_installed = {'org'}
 })
