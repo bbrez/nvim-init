@@ -178,12 +178,9 @@ return require('packer').startup({ function(use)
             })
         end,
     }
-    
+
     use {
-        'nvim-orgmode/orgmode',
-        config = function()
-            require('orgmode').setup{}
-        end,
+        'stevearc/dressing.nvim'
     }
 
     if packer_bootstrap then

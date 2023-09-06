@@ -8,10 +8,12 @@ lsp.extend_cmp()
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
+    ensure_installed = {},
     handlers = {
         lsp.default_setup,
         lua_ls = function()
-            require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+            local lua_opts = lsp.nvim_lua_ls()
+            require('lspconfig').lua_ls.setup(lua_opts)
         end
     }
 })
@@ -19,7 +21,5 @@ require('mason-lspconfig').setup({
 require('nvim-treesitter.configs').setup({
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = {'org'}
     },
-    ensure_installed = {'org'}
 })
