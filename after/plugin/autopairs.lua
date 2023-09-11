@@ -1,0 +1,21 @@
+require('nvim-autopairs').setup()
+require('nvim-ts-autotag').setup({
+    skip_tags = {
+        'area',
+        'base',
+        'br',
+        'col',
+        'command',
+        'embed',
+        'hr',
+        'img',
+        'input',
+        'keygen',
+        'link',
+        'meta',
+        'param',
+        'source',
+        'track',
+        'wbr'
+    }
+})
