@@ -79,7 +79,7 @@ return require('packer').startup({ function(use)
         'windwp/nvim-ts-autotag',
     }
 
-    use 'lukas-reineke/indent-blankline.nvim'
+    -- use 'lukas-reineke/indent-blankline.nvim'
 
     use {
         'nvim-telescope/telescope.nvim',
