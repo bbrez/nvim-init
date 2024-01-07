@@ -1,3 +1,3 @@
 require('bbrez.set')
 require('bbrez.remap')
-require('bbrez.plugin')
+require('bbrez.lazy')
