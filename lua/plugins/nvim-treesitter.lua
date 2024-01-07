@@ -1,7 +1,13 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  highlight = {
-    enabled = true,
-    additional_vim_regex_highlighting = false,
-  }
+  build = ':TSUpdate',
+  config = function()
+    local configs = require('nvim-treesitter.configs')
+
+    configs.setup({
+      sync_install = false,
+      highlight = { enable = true },
+      indent = { enable = true }
+    })
+  end
 }
