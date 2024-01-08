@@ -22,3 +22,6 @@ vim.keymap.set('n', 'q:', '<Nop>', { noremap = true, silent = true })
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true})
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true})
+
+-- Use esc to exit terminal insert
+vim.keymap.set('t', '<ESC>', '<C-\\><C-N>', { noremap = true })
