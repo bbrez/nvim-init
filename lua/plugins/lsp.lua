@@ -5,6 +5,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-cmdline',
     'L3MON4D3/LuaSnip'
   },
 
@@ -110,6 +111,20 @@ return {
           require('luasnip').lsp_expand(args.body)
         end,
       }
+    })
+
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' }
+      }, {
+        {
+          name = 'cmdline',
+          option = {
+            ignore_cmd = { 'Man', '!' }
+          }
+        }
+      })
     })
   end,
 }
