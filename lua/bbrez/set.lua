@@ -23,6 +23,8 @@ vim.opt.undofile = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.opt.cursorline = true
+
 local is_windows = vim.fn.has('win32') == 1
 
 if is_windows then

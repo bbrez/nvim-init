@@ -1,6 +1,6 @@
 return {
   'laytan/cloak.nvim',
-  opts = { 
+  opts = {
     enabled = true,
     cloak_character = '*',
     patterns = {
