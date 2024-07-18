@@ -69,28 +69,28 @@ return {
       handlers = {
         default_setup,
 
-        -- lua_ls = function()
-        --   require('lspconfig').lua_ls.setup({
-        --     capabilities = lsp_capabilities,
-        --     settings = {
-        --       Lua = {
-        --         runtime = {
-        --           version = 'LuaJIT'
-        --         },
-        --
-        --         diagnostics = {
-        --           globals = { 'vim' }
-        --         },
-        --
-        --         workspace = {
-        --           library = {
-        --             vim.env.VIMRUNTIME,
-        --           }
-        --         }
-        --       }
-        --     }
-        --   })
-        -- end
+        lua_ls = function()
+          require('lspconfig').lua_ls.setup({
+            capabilities = lsp_capabilities,
+            settings = {
+              Lua = {
+                runtime = {
+                  version = 'LuaJIT'
+                },
+
+                diagnostics = {
+                  globals = { 'vim' }
+                },
+
+                workspace = {
+                  library = {
+                    vim.env.VIMRUNTIME,
+                  }
+                }
+              }
+            }
+          })
+        end
       }
     })
 

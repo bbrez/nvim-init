@@ -1,19 +1,22 @@
 return {
-  'folke/which-key.nvim',
-  --event = 'VeryLazy',
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  dependencies = {
+    'echasnovski/mini.icons',
+    'nvim-tree/nvim-web-devicons'
+  },
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300
   end,
   config = function()
     local wk = require('which-key')
-    wk.setup{}
-    wk.register({
-      c = { name = 'Code' },
-      f = { name = 'File' },
-      t = { name = 'Terminal' },
-      v = { name = 'View' },
-      w = { name = 'Window' },
-    }, { prefix = '<leader>' })
-  end,
+    wk.add({
+      {"<leader>c", group = "Code"},
+      {"<leader>f", group = "File"},
+      {"<leader>t", group = "Terminal"},
+      {"<leader>v", group = "View"},
+      {"<leader>w", group = "Window"}
+    })
+  end
 }
