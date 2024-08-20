@@ -7,7 +7,7 @@ return {
       flavour = 'mocha',
       integrations = {
         nvimtree = true
-      }
+      },
     })
 
     vim.cmd.colorscheme 'catppuccin'

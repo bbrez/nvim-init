@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
   config = function()
     require('notify').setup({
-      timeout = 500
+      timeout = 500,
    })
 
     require('noice').setup({
