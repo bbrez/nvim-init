@@ -25,6 +25,30 @@ vim.opt.splitbelow = true
 
 vim.opt.cursorline = true
 
+vim.api.nvim_create_augroup("IndentSettings", {clear = true})
+local function set_indent(filetypes, tabstop, shiftwidth, expandtab)
+  for _, ft in ipairs(filetypes) do
+    vim.api.nvim_create_autocmd("FileType", {
+      group = "IndentSettings",
+      pattern = ft,
+      callback = function()
+        vim.bo.tabstop = tabstop
+        vim.bo.shiftwidth = shiftwidth
+        vim.bo.softtabstop = tabstop
+        vim.bo.expandtab = expandtab
+      end
+    })
+  end
+end
+
+set_indent({"cshtml", "cs"}, 4, 4, true)
+
+vim.filetype.add({
+  extension = {
+    cshtml = "razor"
+  }
+})
+
 local is_windows = vim.fn.has('win32') == 1
 
 if is_windows then
