@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -pr "This will delete everything in ~/.config/nvim, continue? [y/N] " choice
+read -p "This will delete everything in ~/.config/nvim, continue? [y/N] " choice
 choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
 
 if [ "$choice" = "Y" ]; then
