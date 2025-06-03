@@ -7,11 +7,16 @@ if vim.g.neovim then
 end
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = {'<filetype>'},
   callback = function()
-    vim.treesitter.start() 
-    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    local tree_sitter = require'nvim-treesitter'
+
+    for _, lang in ipairs(tree_sitter.get_installed()) do
+      if vim.bo.filetype and lang == vim.treesitter.language.get_lang(vim.bo.filetype) then
+        vim.treesitter.start()
+        vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end
+    end
   end,
 })
 
