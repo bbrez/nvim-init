@@ -3,7 +3,7 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons', 'catppuccin' },
   config = function()
     require('bufferline').setup {
-      highlights = require('catppuccin.groups.integrations.bufferline').get(),
+      highlights = require('catppuccin.special.bufferline').get_theme(),
       options = {
         diagnostics = 'nvim_lsp',
         separator_style = 'thin',
