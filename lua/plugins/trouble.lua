@@ -7,16 +7,11 @@ return {
       '<leader>cd',
       '<cmd>Trouble diagnostics toggle<cr>',
       desc = 'Code Diagnostics',
-      noremap = true,
-      silent = true,
     },
-
     {
-      '<leader>ca',
+      '<leader>cq',
       '<cmd>Trouble qflist toggle<cr>',
-      desc = 'Code Action',
-      noremap = true,
-      silent = true,
-    }
+      desc = 'Quickfix',
+    },
   },
 }

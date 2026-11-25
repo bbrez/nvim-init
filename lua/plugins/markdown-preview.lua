@@ -1,17 +1,19 @@
 return {
   'iamcco/markdown-preview.nvim',
   lazy = true,
-  cmd = 'MarkdownPreviewToggle',
+  cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
   ft = 'markdown',
+  build = function()
+    vim.fn['mkdp#util#install']()
+  end,
+  keys = {
+    {
+      '<leader>md',
+      '<cmd>MarkdownPreviewToggle<cr>',
+      desc = 'Markdown preview',
+    },
+  },
   init = function()
-    vim.keymap.set('n', '<leader>md', ':MarkdownPreviewToggle<CR>', {
-      noremap = true,
-      silent = true,
-      desc = 'Markdown preview'
-    })
-
     vim.g.mkdp_filetypes = { 'markdown' }
   end,
-
-  build = 'cd app && npx --yes yarn install',
 }

@@ -1,23 +1,22 @@
 return {
   'stevearc/aerial.nvim',
   lazy = true,
-  cmd = "AerialToggle",
+  cmd = 'AerialToggle',
   opts = {
     layout = {
       width = 30,
       default_direction = 'right',
-    }
+    },
   },
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
-    'nvim-tree/nvim-web-devicons'
+    'nvim-tree/nvim-web-devicons',
   },
-
-  init = function()
-    vim.keymap.set('n', '<leader>co', ':AerialToggle<CR>', {
-      noremap = true,
-      silent = true,
-      desc = 'Toggle Code Outline'
-    })
-  end,
+  keys = {
+    {
+      '<leader>co',
+      '<cmd>AerialToggle<cr>',
+      desc = 'Toggle Code Outline',
+    },
+  },
 }

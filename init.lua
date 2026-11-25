@@ -2,13 +2,16 @@ require('bbrez.set')
 require('bbrez.remap')
 require('bbrez.lazy')
 
-if vim.g.neovim then
+if vim.g.neovide then
   require('bbrez.graphical')
 end
 
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
-    local tree_sitter = require'nvim-treesitter'
+    local ok, tree_sitter = pcall(require, 'nvim-treesitter')
+    if not ok then
+      return
+    end
 
     local filetype = vim.bo.filetype
     if not filetype or filetype == '' then
@@ -21,8 +24,5 @@ vim.api.nvim_create_autocmd('FileType', {
     end
 
     vim.treesitter.start()
-    -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
-

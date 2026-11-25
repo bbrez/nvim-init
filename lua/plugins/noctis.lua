@@ -1,3 +1,4 @@
 return {
-  'iagorrr/noctis-high-contrast.nvim'
+  'iagorrr/noctis-high-contrast.nvim',
+  lazy = true,
 }

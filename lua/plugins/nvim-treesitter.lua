@@ -3,8 +3,8 @@ return {
   lazy = false,
   branch = 'main',
   build = ':TSUpdate',
-  init = function()
-    require'nvim-treesitter'.install{
+  config = function()
+    require('nvim-treesitter').install({
       'c',
       'cpp',
       'rust',
@@ -23,6 +23,11 @@ return {
       'svelte',
       'tsx',
       'ocaml',
-    }
-  end
+      'markdown',
+      'markdown_inline',
+      'vim',
+      'vimdoc',
+      'query',
+    })
+  end,
 }
