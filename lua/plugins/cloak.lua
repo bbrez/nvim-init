@@ -1,5 +1,6 @@
 return {
   'laytan/cloak.nvim',
+  event = 'BufReadPre',
   opts = {
     enabled = true,
     cloak_character = '*',
@@ -7,8 +8,11 @@ return {
       {
         file_pattern = '.env*',
         cloak_pattern = '=.+',
-        replace = nil
-      }
-    }
-  }
+        replace = nil,
+      },
+    },
+  },
+  keys = {
+    { '<leader>vc', '<cmd>CloakToggle<cr>', desc = 'Toggle Cloak' },
+  },
 }

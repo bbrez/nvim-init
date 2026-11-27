@@ -49,6 +49,15 @@ return {
 
         map('n', '<F4>', vim.lsp.buf.code_action, 'Code Action')
         map('n', '<leader>ca', vim.lsp.buf.code_action, 'Code Action')
+
+        map('n', '<leader>ce', vim.diagnostic.open_float, 'Line Diagnostics')
+
+        if vim.lsp.inlay_hint then
+          map('n', '<leader>ci', function()
+            local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = buf })
+            vim.lsp.inlay_hint.enable(not enabled, { bufnr = buf })
+          end, 'Toggle Inlay Hints')
+        end
       end,
     })
   end,

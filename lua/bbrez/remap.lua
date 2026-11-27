@@ -6,6 +6,33 @@ vim.keymap.set('n', '<leader>wv', '<cmd>vsplit<cr>', {
   desc = 'Vertical Split',
 })
 
+vim.keymap.set('n', '<leader>wq', '<cmd>close<cr>', {
+  desc = 'Close Window',
+})
+
+vim.keymap.set('n', '<leader>wo', '<cmd>only<cr>', {
+  desc = 'Only Window',
+})
+
+vim.keymap.set('n', '<leader>we', '<C-w>=', {
+  desc = 'Equalize Windows',
+})
+
+vim.keymap.set('n', '<leader>fy', function()
+  local path = vim.fn.expand('%:.')
+  if path == '' then
+    vim.notify('No file name', vim.log.levels.WARN)
+    return
+  end
+  vim.fn.setreg('+', path)
+  vim.notify('Yanked: ' .. path)
+end, { desc = 'Yank file path' })
+
+vim.keymap.set('n', '<leader>L', '<cmd>Lazy<cr>', {
+  desc = 'Lazy',
+})
+
+
 vim.keymap.set('n', ']b', '<cmd>bnext<cr>', { desc = 'Next buffer' })
 vim.keymap.set('n', '[b', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
 
