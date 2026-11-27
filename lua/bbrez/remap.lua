@@ -32,7 +32,6 @@ vim.keymap.set('n', '<leader>L', '<cmd>Lazy<cr>', {
   desc = 'Lazy',
 })
 
-
 vim.keymap.set('n', ']b', '<cmd>bnext<cr>', { desc = 'Next buffer' })
 vim.keymap.set('n', '[b', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
 
